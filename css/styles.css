@@ -1,3 +1,12 @@
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 :root {
     --black: #000;
     --white: #fff;
@@ -16,11 +25,16 @@ section {
 }
 
 /* ***************** Typography **************** */
-h2 {
+h2,
+h3 {
     color: var(--red);
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: 200;
+}
+
+h3 {
+    font-size: 2.8125rem;
 }
 
 p {
@@ -57,6 +71,7 @@ svg {
 fieldset {
     border: none;
     padding: 0;
+    margin-bottom: 40px;
 }
 
 label {
@@ -65,10 +80,73 @@ label {
     display: block;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     border: 1px solid var(--grey);
     border-radius: 5px;
     padding: 0.5rem;
     box-shadow: 2px 2px 3px var(--lt-grey);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 300px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+label[for="accept"] {
+    display: inline;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    width: auto;
+    border: none;
+    background-color: var(--white);
+    box-shadow: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: padding-left 1s ease;
+}
+
+input[type="submit"]:hover {
+    color: var(--red);
+    padding-left: 20px;
+}
+
+@media only screen and (min-width: 1260px) {
+    /* Move to a 2 column layout and add a fixed width container */
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    fieldset div {
+        flex: 0 1 49%;
+    }
+
+    h3 {
+        width: 100%;
+    }
+
+    input {
+        margin-bottom: 1.5rem;
+    }
+
+    .inner-container,
+    section {
+        padding: 1rem;
+        max-width: 76.75rem;
+        margin: 0 auto;
+    }
 }
