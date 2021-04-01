@@ -44,6 +44,8 @@ p {
 /* ***************** Header **************** */
 header {
     background-color: var(--black);
+    position: sticky;
+    top: -100px;
 }
 
 svg {
@@ -78,6 +80,10 @@ label {
     font-size: 1.875rem;
     text-transform: uppercase;
     display: block;
+}
+
+input:invalid {
+    background-color: rgb(238, 166, 166);
 }
 
 input,
